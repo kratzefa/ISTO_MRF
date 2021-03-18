@@ -24,8 +24,6 @@ woff = cat(1,(-150:1:150).',(-150:1:150).')*2*pi;           %off-resonance [Hz]*
 
 % cat parameters
 LUT_Parameter = cat(2,J0,J1,J2,wq, woff);
-
-params.get_slice_profile = 0;
     
 num_of_spins   = 100;                                       %number of isochromats
 %% set FA and TE pattern
