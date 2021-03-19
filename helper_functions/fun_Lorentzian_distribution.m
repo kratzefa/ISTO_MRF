@@ -76,13 +76,13 @@ function [signal_Lorentz, LUT_T_biT1_Lorentz, LUT_T_monT1_Lorentz,LUT_J_Lorentz]
     i_cnt_max = size(signal_temp_interp,3);
     fprintf('Lorentz distribution progress: %i%% ',0)
     for i_cnt = 1:i_cnt_max
-        T1l_set = T1l(i_cnt+length(B0_u));
-        T1s_set = T1s(i_cnt+length(B0_u));
-        T2l_set = T2l(i_cnt+length(B0_u));
-        T2s_set = T2s(i_cnt+length(B0_u));
-        J0_set = LUT_Parameter(i_cnt+length(B0_u),1);
-        J1_set = LUT_Parameter(i_cnt+length(B0_u),2);
-        J2_set = LUT_Parameter(i_cnt+length(B0_u),3);
+        T1l_set = T1l(1+(i_cnt-1)*length(B0_u));
+        T1s_set = T1s(1+(i_cnt-1)*length(B0_u));
+        T2l_set = T2l(1+(i_cnt-1)*length(B0_u));
+        T2s_set = T2s(1+(i_cnt-1)*length(B0_u));
+        J0_set = LUT_Parameter(1+(i_cnt-1)*length(B0_u),1);
+        J1_set = LUT_Parameter(1+(i_cnt-1)*length(B0_u),2);
+        J2_set = LUT_Parameter(1+(i_cnt-1)*length(B0_u),3);
 
 
         kmax = (T2l_set*1e3-round(T2l_set*1e3*minT2l_fact));
